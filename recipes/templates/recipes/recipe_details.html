@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>{{ recipe.title }}</h2>
+    
+    <p><strong>Категория:</strong> {{ recipe.get_category_display }}</p>
+    <p><strong>Время приготовления:</strong> {{ recipe.cooking_time}} минут</p>
+    <p><strong>Калорийность:</strong> {{ recipe.calories } ккал}</p>
+    
+    <h3>Приготовление</h3>
+    <p>{{ recipe.instructions }}</p>
+    
+    <a href="{% url 'recipe_list' %}">
+        Назад к списку
+    </a>
+{% endblock %}
